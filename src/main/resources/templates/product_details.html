@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Product management</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-wrapper">
+      <div class="text-center mb-4">
+        <h2>Product details</h2>
+        <hr />
+      </div>
+
+      <div class="form-container">
+        <form th:object="${product}">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Product Name</label>
+              <input
+                type="text"
+                th:field="*{name}"
+                class="form-control mb-4"
+                placeholder="Product Name"
+                disabled="disabled"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Product Code</label>
+              <input
+                type="text"
+                th:field="*{code}"
+                class="form-control mb-4"
+                placeholder="Product Code"
+                disabled="disabled"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Price (EUR)</label>
+              <input
+                type="text"
+                th:field="*{priceEur}"
+                class="form-control mb-4"
+                placeholder="Price ?"
+                disabled="disabled"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Price (USD)</label>
+              <input
+                type="text"
+                th:field="*{priceUsd}"
+                class="form-control mb-4"
+                placeholder="Price $"
+                disabled="disabled"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Created</label>
+              <input
+                type="text"
+                th:field="*{createdAt}"
+                class="form-control mb-4"
+                placeholder="Created"
+                disabled="disabled"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label>Modified</label>
+              <input
+                type="text"
+                th:field="*{updatedAt}"
+                class="form-control mb-4"
+                placeholder="Modified"
+                disabled="disabled"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <div class="form-check mb-4">
+                <input
+                  type="checkbox"
+                  th:field="*{available}"
+                  class="form-check-input"
+                  disabled="disabled"
+                />
+                <label class="form-check-label">Is available</label>
+              </div>
+            </div>
+          </div>
+        </form>
+        <hr />
+        <a th:href="@{/}">Back to Product List</a>
+      </div>
+    </div>
+  </body>
+</html>
