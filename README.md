@@ -42,3 +42,8 @@ To run the application, ensure you have the following installed:
 
    ```bash
    docker-compose up
+
+6. Now open your favourite browser and go to:
+
+   ```bash
+   localhost:8080
